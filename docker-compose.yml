@@ -3,7 +3,7 @@ services:
  httpd:
     image: khilkov/lesson_docker:0.0.1
     environment:
-        TEXT: "Lesson 3"
+        TEXT: "Lesson 5gitdlfgja"
     ports:
          - 80:9090
  httpd2:
