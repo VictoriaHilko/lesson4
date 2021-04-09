@@ -1,0 +1,15 @@
+version: "3"
+services:
+ httpd:
+    image: khilkov/lesson_docker:0.0.1
+    environment:
+        TEXT: "Lesson 3"
+    ports:
+         - 80:9090
+ httpd2:
+    image: khilkov/lesson_docker:0.0.1
+    environment:
+         TEXT: "Lesson 3_ Env2"
+    ports:
+        - 81:9090
+
