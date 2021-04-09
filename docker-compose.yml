@@ -1,15 +1,15 @@
-version: "3"
+version: "2.40"
 services:
- httpd:
+  nginx:
     image: khilkov/lesson_docker:0.0.1
     environment:
-        TEXT: "Lesson 5gitdlfgja"
+      TEXT: "Lesson 3 lalalalala"
     ports:
-         - 80:9090
- httpd2:
+        - 80:9090
+    httpd:
     image: khilkov/lesson_docker:0.0.1
     environment:
-         TEXT: "Lesson 3_ Env2"
+      TEXT: "Lesson 3_ Env2"
     ports:
         - 81:9090
 
