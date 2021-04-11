@@ -1,3 +1,4 @@
  **Build Passed  Push to Docker Hub** - [![Build Status](https://travis-ci.org/dwyl/esta.svg?branch=master)](https://travis-ci.org/dwyl/esta)
 
-**CodeClimate** - [![Code Climate](https://codeclimate.com/github/dwyl/esta/badges/gpa.svg)](https://codeclimate.com/github/dwyl/esta) - is the code quality score for a project measured on a number of factors including **Complexity/Simplicity, Readability, Maintainability, Repetition and Line-count-per-file** . The <b><i>max</b></i>imum ***score*** is **4.0** and we *obviously* strive to achieve this level in all our work.   [https://github.com/dwyl/**learn-codeclimate**](https://github.com/dwyl/learn-codeclimate)
+ <a href="https://circleci.com/gh/badges/shields/tree/master">
+        <img src="https://img.shields.io/circleci/project/github/badges/shields/master" alt="build status"></a>
