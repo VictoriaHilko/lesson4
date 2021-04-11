@@ -3,11 +3,11 @@ jobs:
   build:
     docker:
       - image: circleci/golang:1.15
-      auth:
-        username: VictoriaHilko
-        password: $DOCKERHUB_PASSWORD
+        auth:
+          username: VictoriaHilko
+          password: $DOCKERHUB_PASSWORD
     steps:
-      - checout
+      - checkout
 
       - setup_remote_docker:
           version: 19.03.13
