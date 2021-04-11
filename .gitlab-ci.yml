@@ -1,0 +1,27 @@
+image: alpine:latest
+
+
+before_script:
+  - apk add --update openssh-client
+  - eval $ (ssh-agent -s)
+
+stages:
+ - export
+ - deploy
+
+
+
+Export:
+  only:
+   - master
+stage: export
+script:
+  - export
+
+AWS-SSH:
+  only:
+    - master
+  stage: deploy
+  script:
+       - echo "$KEY" | ssh-add - /dev/null
+       - ssh -o StrictHostKeyCheching=no "$USER"@"$SERVER" -p "$PORT" 'cd /var/www/html && git reset --hard && git pull'
