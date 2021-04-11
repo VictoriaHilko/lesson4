@@ -14,5 +14,5 @@ jobs:
         with:
           username: khilkov
           password: 12345KAyS29
-          repository: khilkov/my-docker-hub-repository
+          repository: khilkov/lesson_docker
           tag_with_ref: true
