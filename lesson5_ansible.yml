@@ -1,0 +1,56 @@
+---
+- hosts: local
+  connection: local
+  become: yes
+
+  tasks:
+    - name: Update apt
+      apt: update_cache=yes force_apt_get=yes
+
+    - name: Install python
+      apt:
+        name: python3
+        state: latest
+
+    - name: Install python3
+      apt:
+        name: python3-pip
+        state: latest
+
+    - name: pip3 install docker-py
+      command: pip3 install docker-py
+
+    - name: Apt update
+      command: apt -y update
+
+    - name: apt-update-get install
+      command: sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg \ lsb-release
+
+    - name: Add key
+      uri:
+        url: https://download.docker.com/linux/ubuntu/gpg 
+        command: sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+    - name: apt-get update
+      command: apt-get update
+
+    - name: Apt install docker-ce
+      command: apt-get install docker-ce docker-ce-cli containerd.io
+
+    - name: Apt update
+      command: python3 -m pip install -U pip
+
+    - name: pip3 install docker-compose
+      command: pip3 install docker-compose
+
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: docker-compose.yml
+        dest: /opt/
+        owner: root
+        group: root
+        mode: '0644'
+        
+    - name: docker-compose start
+      command: docker-compose start
+   
